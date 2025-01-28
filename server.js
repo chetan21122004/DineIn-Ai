@@ -7,7 +7,9 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("Server is working!");
+});
 app.get("/tables/check", async (req, res) => {
     const { date, time, persons } = req.body;
   
